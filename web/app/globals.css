@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Theme tokens are RGB triplets (not hex) so Tailwind's <alpha-value> syntax
+ * works: rgb(var(--accent) / 0.5) etc. Light is the :root default; .dark
+ * overrides. The font variables point at the families loaded in layout.tsx.
+ */
+:root {
+  --background: 248 250 252;
+  --foreground: 15 23 42;
+  --accent: 5 150 105;
+  --muted: 100 116 139;
+}
+
+.dark {
+  --background: 8 11 20;
+  --foreground: 233 238 247;
+  --accent: 52 211 153;
+  --muted: 138 149 168;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Offset in-page anchors for the fixed navbar. */
+  section,
+  footer {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* Ambient backdrop glow behind the hero and dashboard. */
+.pulse-glow {
+  background:
+    radial-gradient(42% 50% at 18% 25%, rgba(52, 211, 153, 0.16), transparent 70%),
+    radial-gradient(46% 55% at 82% 22%, rgba(56, 189, 248, 0.15), transparent 70%),
+    radial-gradient(50% 60% at 50% 85%, rgba(251, 191, 36, 0.10), transparent 70%);
+}
+
+/* Faint grid texture for the dashboard panels. */
+.grid-texture {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
