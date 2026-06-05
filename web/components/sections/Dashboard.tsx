@@ -26,7 +26,9 @@ const STATUS_COLOR: Record<ConnectionStatus, string> = {
 function StatusPill({ status }: { status: ConnectionStatus }) {
   return (
     <span className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background/40 px-3 py-1 text-xs font-medium text-foreground/70">
-      <span className={`h-2 w-2 rounded-full ${STATUS_COLOR[status]} ${status === "live" ? "animate-pulse" : ""}`} />
+      <span
+        className={`h-2 w-2 rounded-full ${STATUS_COLOR[status]} ${status === "live" ? "animate-pulse" : ""}`}
+      />
       {STATUS_LABEL[status]}
     </span>
   );
@@ -44,7 +46,7 @@ export function Dashboard() {
   const categories = snapshot?.categories ?? [];
   const selected = series.find((s) => s.id === selectedId) ?? series[0];
   const selectedColor = selected
-    ? SERIES_COLORS[selected.id] ?? DEFAULT_SERIES_COLOR
+    ? (SERIES_COLORS[selected.id] ?? DEFAULT_SERIES_COLOR)
     : DEFAULT_SERIES_COLOR;
 
   return (
@@ -81,10 +83,17 @@ export function Dashboard() {
                 <h3 className="font-display text-lg font-semibold text-foreground">
                   {selected ? selected.label : "Metric"} over time
                 </h3>
-                <FilterBar series={series} selectedId={selectedId} onSelect={setSelectedId} />
+                <FilterBar
+                  series={series}
+                  selectedId={selectedId}
+                  onSelect={setSelectedId}
+                />
               </div>
               <div className="h-56">
-                <AreaChart data={selected ? selected.history : []} color={selectedColor} />
+                <AreaChart
+                  data={selected ? selected.history : []}
+                  color={selectedColor}
+                />
               </div>
             </div>
 

@@ -28,7 +28,10 @@ export function AreaChart({ data, color }: AreaChartProps) {
   });
 
   const line = coords
-    .map(([x, y], index) => `${index === 0 ? "M" : "L"}${x.toFixed(2)} ${y.toFixed(2)}`)
+    .map(
+      ([x, y], index) =>
+        `${index === 0 ? "M" : "L"}${x.toFixed(2)} ${y.toFixed(2)}`,
+    )
     .join(" ");
   const area = `${line} L ${width} ${height} L 0 ${height} Z`;
   const gradientId = `area-${color.replace("#", "")}`;

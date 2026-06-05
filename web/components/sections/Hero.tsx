@@ -4,7 +4,10 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      <div className="pulse-glow pointer-events-none absolute inset-0" aria-hidden="true" />
+      <div
+        className="pulse-glow pointer-events-none absolute inset-0"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background/30 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.25em] text-foreground/70 backdrop-blur-sm">
@@ -25,8 +28,18 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a href="#dashboard" className="rounded-full bg-accent px-7 py-3 text-sm font-semibold text-background shadow-xl shadow-accent/20 transition-shadow hover:shadow-accent/40">View the dashboard</a>
-          <a href="#about" className="rounded-full border border-foreground/20 px-7 py-3 text-sm font-semibold text-foreground transition-colors hover:border-accent/60">How it works</a>
+          <a
+            href="#dashboard"
+            className="rounded-full bg-accent px-7 py-3 text-sm font-semibold text-background shadow-xl shadow-accent/20 transition-shadow hover:shadow-accent/40"
+          >
+            View the dashboard
+          </a>
+          <a
+            href="#about"
+            className="rounded-full border border-foreground/20 px-7 py-3 text-sm font-semibold text-foreground transition-colors hover:border-accent/60"
+          >
+            How it works
+          </a>
         </div>
       </div>
 

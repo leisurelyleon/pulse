@@ -15,7 +15,11 @@ interface AnimatedNumberProps {
  * metric updates count smoothly rather than snapping. Jumps instantly under
  * reduced motion.
  */
-export function AnimatedNumber({ value, decimals = 0, className }: AnimatedNumberProps) {
+export function AnimatedNumber({
+  value,
+  decimals = 0,
+  className,
+}: AnimatedNumberProps) {
   const reducedMotion = usePrefersReducedMotion();
   const [display, setDisplay] = useState(value);
 

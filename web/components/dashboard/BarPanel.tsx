@@ -20,7 +20,10 @@ export function BarPanel({ categories }: BarPanelProps) {
         const pct = (category.value / max) * 100;
         const color = CATEGORY_COLORS[index % CATEGORY_COLORS.length];
         return (
-          <div key={category.label} className="flex flex-1 flex-col items-center gap-2">
+          <div
+            key={category.label}
+            className="flex flex-1 flex-col items-center gap-2"
+          >
             <div className="relative flex h-40 w-full items-end overflow-hidden rounded-lg bg-foreground/5">
               <motion.div
                 className="w-full rounded-lg"
