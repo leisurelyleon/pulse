@@ -29,3 +29,6 @@ export type ConnectionStatus =
   | "live"
   | "reconnecting"
   | "offline";
+
+/** A hex color string used for chart strokes and fills. */
+export type EngineSeriesColor = string;
